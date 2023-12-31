@@ -1,0 +1,81 @@
+﻿<Window x:Class="Ty1CollectibleTracker.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Ty1CollectibleTracker"
+        xmlns:controls="clr-namespace:Ty1CollectibleTracker.Controls"
+        mc:Ignorable="d"
+        Background="Transparent"
+        BorderThickness="2"
+        BorderBrush="White"
+        AllowsTransparency="True"
+        WindowStyle="None"
+        ResizeMode="CanResizeWithGrip"
+        Title="MainWindow" Height="450" Width="800"
+        Topmost="True"
+        Closing="MainWindow_OnClosing">
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
+    <Window.Resources>
+        <ContextMenu x:Key="ContextMenu">
+            <MenuItem Header="Settings" Click="Settings_Click"/>
+            <MenuItem Header="Solid Back" Click="SetSolidBack_Click" IsCheckable="True"/>
+            <MenuItem Header="Close" Click="Close_Click"/>
+        </ContextMenu>
+    </Window.Resources>
+    <Grid>
+        <Canvas x:Name="Canvas"
+                Background="Transparent" 
+                IsHitTestVisible="True"
+                AllowDrop="True"
+                DragOver="Canvas_OnDrag"
+                MouseDown="UIElement_OnMouseDown"
+                ContextMenu="{StaticResource ContextMenu}">
+            <controls:Collectible DataContext="{Binding CogCollectible}"
+                                  x:Name="Cog"
+                                  PreviewMouseLeftButtonDown="Collectible_MouseDown"
+                                  PreviewMouseMove="Collectible_MouseMove"/>
+            
+            <controls:Collectible DataContext="{Binding TECollectible}"
+                                  x:Name="TE"
+                                  PreviewMouseLeftButtonDown="Collectible_MouseDown"
+                                  PreviewMouseMove="Collectible_MouseMove"/>
+            
+            <controls:Collectible DataContext="{Binding BilbyCollectible}"
+                                  x:Name="Bilby"
+                                  PreviewMouseLeftButtonDown="Collectible_MouseDown"
+                                  PreviewMouseMove="Collectible_MouseMove"/>
+            
+            <controls:Collectible DataContext="{Binding OpalCollectible}"
+                                  x:Name="Opal"
+                                  PreviewMouseLeftButtonDown="Collectible_MouseDown"
+                                  PreviewMouseMove="Collectible_MouseMove"/>
+            
+            <controls:Collectible DataContext="{Binding RangCollectible}"
+                                  x:Name="Rang"
+                                  PreviewMouseLeftButtonDown="Collectible_MouseDown"
+                                  PreviewMouseMove="Collectible_MouseMove"/>
+            
+            <controls:Collectible DataContext="{Binding TalismanCollectible}"
+                                  x:Name="Talisman"
+                                  PreviewMouseLeftButtonDown="Collectible_MouseDown"
+                                  PreviewMouseMove="Collectible_MouseMove"/>
+            
+            <controls:Collectible DataContext="{Binding FrameCollectible}"
+                                  x:Name="Frame"
+                                  PreviewMouseLeftButtonDown="Collectible_MouseDown"
+                                  PreviewMouseMove="Collectible_MouseMove"/>
+        </Canvas>
+        <Rectangle HorizontalAlignment="Center"
+                   VerticalAlignment="Top"
+                   Width="150"
+                   Height="20"
+                   Margin="0 -5 0 0"
+                   Fill="{Binding Settings.TransparentGrabBar, Converter={StaticResource BooleanToGrabBarColorConverter}}"
+                   MouseDown="UIElement_OnMouseDown"
+                   x:Name="GrabBar"
+                   ContextMenu="{StaticResource ContextMenu}"/>
+    </Grid>
+</Window>

@@ -1,0 +1,39 @@
+﻿{
+  "TEPosition": [
+    1575.0,
+    300.0
+  ],
+  "CogPosition": [
+    1575.0,
+    370.0
+  ],
+  "BilbyPosition": [
+    1575.0,
+    440.0
+  ],
+  "OpalPosition": [
+    1575.0,
+    510.0
+  ],
+  "TalismanPosition": [
+    1575.0,
+    580.0
+  ],
+  "RangPosition": [
+    1575.0,
+    650.0
+  ],
+  "FramePosition": [
+    1575.0,
+    720.0
+  ],
+  "WindowPosition": [
+    196.0,
+    199.0
+  ],
+  "WindowSize": [
+    1695.0,
+    825.0
+  ],
+  "WindowMaximized": true
+}

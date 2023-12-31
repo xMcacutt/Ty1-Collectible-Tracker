@@ -1,0 +1,14 @@
+{
+  "DisplayOpals": "true",
+  "DisplayCogs": "true",
+  "DisplayTEs": "true",
+  "DisplayBilbies": "true",
+  "DisplayFrames": "true",
+  "DisplayRangs": "true",
+  "DisplayTalismans": "true",
+  "TickLength": 200,
+  "FontFamily": "Comic Sans MS",
+  "FontColor": "#ffeda900",
+  "ItemScale": 1,
+  "TransparentGrabBar": "false"
+}

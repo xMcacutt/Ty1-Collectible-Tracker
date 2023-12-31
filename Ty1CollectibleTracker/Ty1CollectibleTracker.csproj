@@ -1,0 +1,84 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net7.0-windows</TargetFramework>
+        <Nullable>enable</Nullable>
+        <UseWPF>true</UseWPF>
+        <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
+        <ApplicationIcon>Images\opal.ico</ApplicationIcon>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="ColorPickerWPF" Version="1.0.9" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+      <PackageReference Include="PropertyChanged.Fody" Version="4.1.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="Images\Dummy.png">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </None>
+      <None Update="Settings.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="app.manifest">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Fonts\FontReg.exe">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+      <None Update="Positions.json">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="Images\OpalA.png" />
+      <Resource Include="Images\OpalB.png" />
+      <Resource Include="Images\OpalC.png" />
+      <None Remove="Images\Cog.png" />
+      <Resource Include="Images\Cog.png" />
+      <None Remove="Fonts\KOMIKAHB.ttf" />
+      <Content Include="Fonts\KOMIKAHB.ttf">
+        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      </Content>
+      <None Remove="Images\TE.png" />
+      <Resource Include="Images\TE.png" />
+      <None Remove="Images\Bilby.png" />
+      <Resource Include="Images\Bilby.png" />
+      <None Remove="Images\Opal.png" />
+      <None Remove="Images\Rang.png" />
+      <None Remove="Images\Talisman.png" />
+      <Resource Include="Images\Talisman.png" />
+      <None Remove="Images\RainbowScale.png" />
+      <Resource Include="Images\RainbowScale.png" />
+      <None Remove="Images\OpalA.png" />
+      <None Remove="Images\OpalB.png" />
+      <None Remove="Images\OpalC.png" />
+      <None Remove="Images\Frame.png" />
+      <Resource Include="Images\Frame.png" />
+      <None Remove="Fonts\AlteHaasGroteskRegular.ttf" />
+      <None Remove="Images\Tick.png" />
+      <Resource Include="Images\Tick.png" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Page Update="Views\MainWindow.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+      <Page Update="ValueConverters\ValueConverters.xaml">
+        <Generator>MSBuild:Compile</Generator>
+        <XamlRuntime>Wpf</XamlRuntime>
+        <SubType>Designer</SubType>
+      </Page>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Resource Include="Images\Rang.png" />
+    </ItemGroup>
+
+</Project>
